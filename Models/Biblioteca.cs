@@ -15,7 +15,17 @@ public class Biblioteca
     }
     public void AgregarLibro(Guid id, string autor, string isbn, string genero, double precio, string titulo, int añoPublicacion)
     {
-        Libro nuevoLibro = new Libro(id, autor, isbn, genero, precio, titulo, añoPublicacion);
+        Console.Write("Ingresa un Titulo: ");
+        string? nuevoTitulo = Console.ReadLine();
+        Console.Write("Ingresa un Autor: ");
+        string? nuevoAutor = Console.ReadLine();
+        Console.Write("Ingresa un Genero: ");
+        string? nuevoGenero = Console.ReadLine();
+        Console.Write("Ingresa un Precio: ");
+        double nuevoPrecio = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Ingresa un Año de Publicacion: ");
+        int nuevoAñoPublicacion = Convert.ToByte(Console.ReadLine());
+        Libro nuevoLibro = new Libro(id, nuevoAutor, isbn, nuevoGenero, nuevoPrecio, nuevoTitulo, nuevoAñoPublicacion);
         Libros.Add(nuevoLibro);
     }
     public void MostrarLibros()
@@ -94,16 +104,16 @@ public class Biblioteca
             Console.WriteLine("No se encontraron libros con el título ingresado");
         }
     }
-    // public void DeterminarReciente()
-    // {
-    //     var libroReciente = Libros.OrderByDescending(libro => libro.AñoPublicacion);
-    //     if (libroReciente!= null)
-    //     {
-    //         Console.WriteLine($"Libro más reciente: ID: {libroReciente.Id} - Título: {libroReciente.Titulo} - Autor: {libroReciente.Autor} - Año de Publicación: {libroReciente.AñoPublicacion}");
-    //     }
-    //     else
-    //     {
-    //         Console.WriteLine("No hay libros en la biblioteca");
-    //     }
-    // }
+    public void DeterminarReciente()
+    {
+        var libroReciente = Libros.OrderByDescending(libro => libro.AñoPublicacion);
+        if (libroReciente != null)
+        {
+            Console.WriteLine($"Libro más reciente: ID: {libroReciente.Id} - Título: {libroReciente.Titulo} - Autor: {libroReciente.Autor} - Año de Publicación: {libroReciente.AñoPublicacion}");
+        }
+        else
+        {
+            Console.WriteLine("No hay libros en la biblioteca");
+        }
+    }
 }

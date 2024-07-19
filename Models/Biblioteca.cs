@@ -28,9 +28,9 @@ public class Biblioteca
         Libro nuevoLibro = new Libro(id, nuevoAutor, isbn, nuevoGenero, nuevoPrecio, nuevoTitulo, nuevoAñoPublicacion);
         Libros.Add(nuevoLibro);
     }
-    public void MostrarLibros()
+    public void MostrarLibros(List<Libro> ListaLibros)
     {
-        foreach (var libro in Libros)
+        foreach (var libro in ListaLibros)
         {
             Console.WriteLine($"ID: {libro.Id} - Título: {libro.Titulo} - Autor: {libro.Autor} - Año de Publicación: {libro.AñoPublicacion}");
         }
@@ -57,11 +57,7 @@ public class Biblioteca
         if (librosEncontrados.Count > 0)
         {
             Console.WriteLine("Libros encontrados:");
-            foreach (var libro in librosEncontrados)
-            {
-                Console.WriteLine($"ID: {libro.Id} - Título: {libro.Titulo} - Autor: {libro.Autor} - Año de Publicación: {libro.AñoPublicacion}");
-            }
-
+            MostrarLibros(librosEncontrados);
         }
         else
         {
@@ -76,11 +72,7 @@ public class Biblioteca
         if (librosEncontrados.Count > 0)
         {
             Console.WriteLine("Libros encontrados:");
-            foreach (var libro in librosEncontrados)
-            {
-                Console.WriteLine($"ID: {libro.Id} - Título: {libro.Titulo} - Autor: {libro.Autor} - Año de Publicación: {libro.AñoPublicacion}");
-            }
-
+            MostrarLibros(librosEncontrados);
         }
         else
         {
@@ -95,11 +87,8 @@ public class Biblioteca
         if (librosEncontrados.Count > 0)
         {
             Console.WriteLine("Libros encontrados:");
-            foreach (var libro in librosEncontrados)
-            {
-                Console.WriteLine($"ID: {libro.Id} - Título: {libro.Titulo} - Autor: {libro.Autor} - Año de Publicación: {libro.AñoPublicacion}");
-            }
-
+            MostrarLibros(librosEncontrados);
+ 
         }
         else
         {
@@ -107,15 +96,9 @@ public class Biblioteca
         }
     }
     public void DeterminarReciente()
-    {
-        var libroReciente = Libros.OrderByDescending(libro => libro.AñoPublicacion);
-        if (libroReciente != null)
-        {
-            Console.WriteLine($"Libro más reciente: ID: {libroReciente.Id} - Título: {libroReciente.Titulo} - Autor: {libroReciente.Autor} - Año de Publicación: {libroReciente.AñoPublicacion}");
-        }
-        else
-        {
-            Console.WriteLine("No hay libros en la biblioteca");
-        }
+    {   
+        Console.WriteLine("Lista de libros ordenados por año");
+        var listaOrdenada = Libros.OrderByDescending(Libro=>Libro.AñoPublicacion).ToList();
+        MostrarLibros(listaOrdenada);
     }
 }

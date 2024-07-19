@@ -35,9 +35,11 @@ public class Biblioteca
             Console.WriteLine($"ID: {libro.Id} - Título: {libro.Titulo} - Autor: {libro.Autor} - Año de Publicación: {libro.AñoPublicacion}");
         }
     }
-    public void EliminarLibro(Guid id, string autor, string isbn, string genero, double precio, string titulo, int añoPublicacion)
+    public void EliminarLibro()
     {
-        Libro? libroAEliminar = Libros.Find(libro => libro.Id == id && libro.Autor == autor && libro.ISBN == isbn && libro.Genero == genero && libro.Precio == precio && libro.Titulo == titulo && libro.AñoPublicacion == añoPublicacion);
+        Console.Write("Ingresa un Titulo para eliminar: ");
+        string? tituloEliminar = Console.ReadLine().ToLower();
+        Libro? libroAEliminar = Libros.Find(libro => libro.Titulo.ToLower() == tituloEliminar);
         if (libroAEliminar != null)
         {
             Libros.Remove(libroAEliminar);

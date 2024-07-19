@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 namespace SistemaBiblioteca.Models;
 public class Libro : Publicacion
 {
-    public Guid Id { get; set; }
     public string Autor { get; set; }
-    public string ISBN { get; set; }
+    public Guid ISBN { get; set; }
     public string Genero { get; set; }
     public double Precio { get; set; }
 
-    public Libro(Guid id, string autor, string isbn, string genero, double precio, string titulo, int añoPublicacion)
+    public Libro(string autor, string genero, double precio, string titulo, int añoPublicacion)
     {
-        this.Id = id;
         this.Autor = autor;
-        this.ISBN = isbn;
+        this.ISBN = Guid.NewGuid();
         this.Genero = genero;
         this.Precio = precio;
         this.Titulo = titulo;
         this.AñoPublicacion = añoPublicacion;
     }
 
-    public void Mostrardetalles()
+    public void MostrarDetalles()
     {
         Console.WriteLine($@"Título: {Titulo} 
                       Autor: {Autor}

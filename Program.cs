@@ -3,7 +3,6 @@
 Console.Clear();
 
 var biblioteca = new Biblioteca();
-
 void Menu()
 {
     CrearLibros();
@@ -75,3 +74,5 @@ void PausarMenu(){
     Console.WriteLine("Presiona una tecla para continuar");
     Console.ReadKey();
 }
+
+Menu();

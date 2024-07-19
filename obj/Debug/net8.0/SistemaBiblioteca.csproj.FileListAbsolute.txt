@@ -1,0 +1,5 @@
+/home/riwip5-020/Desktop/C# & .NET - CamiloB/SistemaBiblioteca/obj/Debug/net8.0/SistemaBiblioteca.GeneratedMSBuildEditorConfig.editorconfig
+/home/riwip5-020/Desktop/C# & .NET - CamiloB/SistemaBiblioteca/obj/Debug/net8.0/SistemaBiblioteca.AssemblyInfoInputs.cache
+/home/riwip5-020/Desktop/C# & .NET - CamiloB/SistemaBiblioteca/obj/Debug/net8.0/SistemaBiblioteca.AssemblyInfo.cs
+/home/riwip5-020/Desktop/C# & .NET - CamiloB/SistemaBiblioteca/obj/Debug/net8.0/SistemaBiblioteca.csproj.CoreCompileInputs.cache
+/home/riwip5-020/Desktop/C# & .NET - CamiloB/SistemaBiblioteca/obj/Debug/net8.0/SistemaBiblioteca.sourcelink.json

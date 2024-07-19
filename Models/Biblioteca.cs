@@ -8,9 +8,9 @@ public class Biblioteca
 {
     private Guid Id { get; set; }
     public List<Libro>? Libros { get; set; }
-    public Biblioteca(Guid id)
+    public Biblioteca()
     {
-        this.Id = id;
+        this.Id = Guid.NewGuid();
         this.Libros = new List<Libro>();
     }
     public void AgregarLibro(Guid id, string autor, string isbn, string genero, double precio, string titulo, int añoPublicacion)

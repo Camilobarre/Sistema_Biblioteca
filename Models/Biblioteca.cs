@@ -88,17 +88,32 @@ public class Biblioteca
         {
             Console.WriteLine("Libros encontrados:");
             MostrarLibros(librosEncontrados);
- 
+
         }
         else
         {
             Console.WriteLine("No se encontraron libros con el título ingresado");
         }
     }
-    public void DeterminarReciente()
-    {   
+    public void OrdenarLibros()
+    {
         Console.WriteLine("Lista de libros ordenados por año");
-        var listaOrdenada = Libros.OrderByDescending(Libro=>Libro.AñoPublicacion).ToList();
+        var listaOrdenada = Libros.OrderByDescending(Libro => Libro.AñoPublicacion).ToList();
         MostrarLibros(listaOrdenada);
+    }
+    public void LibroReciente()
+    {
+        Console.WriteLine("Escribe el título del libro para identificar si es reciente: ");
+        var tituloLibro = Console.ReadLine().ToLower();
+        var libroEncontrado = Libros.Find(libro => libro.Titulo.ToLower() == tituloLibro);
+        var añoActual = DateTime.Now.Year;
+        if (añoActual - 5 <= libroEncontrado.AñoPublicacion)
+        {
+            Console.WriteLine("El libro es reciente");
+        }
+        else
+        {
+            Console.WriteLine("El libro no es reciente");
+        }
     }
 }
